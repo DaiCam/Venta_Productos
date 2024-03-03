@@ -1,5 +1,6 @@
 package com.empresa.Venta.productos.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 
@@ -20,12 +21,19 @@ public class Venta {
     @Column(name = "Cantidad")
     private int cantidad;
 
-    @ManyToOne
-    @JoinColumn(name = "IdCliente", referencedColumnName = "Id")
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(
+            name = "IdCliente",
+            referencedColumnName = "Id"
+    )
     private Cliente cliente;
 
-    @ManyToOne
-    @JoinColumn(name = "IdProducto", referencedColumnName = "Id")
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(
+            name = "IdProducto",
+            referencedColumnName = "Id"
+    )
     private Producto producto;
 
 
@@ -69,3 +77,4 @@ public class Venta {
         this.producto = producto;
     }
 }
+
