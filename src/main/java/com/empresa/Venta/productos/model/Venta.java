@@ -21,20 +21,28 @@ public class Venta {
     @Column(name = "Cantidad")
     private int cantidad;
 
+    /*@Column(name = "Id_Cliente")
+    private int id_cliente;
+
+    @Column(name = "Id_Producto")
+    private int id_producto;*/
+
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(
-            name = "IdCliente",
+            name = "Id_Cliente",
             referencedColumnName = "Id"
     )
     private Cliente cliente;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(
-            name = "IdProducto",
+            name = "Id_Producto",
             referencedColumnName = "Id"
     )
     private Producto producto;
+
+
 
 
     public int getId() {
@@ -74,6 +82,14 @@ public class Venta {
     }
 
     public void setProducto(Producto producto) {
+        this.producto = producto;
+    }
+
+    public Venta(int id, Date fecha, int cantidad, Cliente cliente, Producto producto) {
+        this.id = id;
+        this.fecha = fecha;
+        this.cantidad = cantidad;
+        this.cliente = cliente;
         this.producto = producto;
     }
 }

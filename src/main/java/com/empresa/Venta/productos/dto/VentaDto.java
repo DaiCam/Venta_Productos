@@ -6,8 +6,8 @@ public class VentaDto {
     private Integer id;
     private Date fecha;
     private int cantidad;
-    private int idCliente;
-    private int idProducto;
+    private int id_cliente;
+    private int id_producto;
 
     public Integer getId() {
         return id;
@@ -33,19 +33,19 @@ public class VentaDto {
         this.cantidad = cantidad;
     }
 
-    public int getIdCliente() {
-        return idCliente;
+    public int getId_cliente() {
+        return id_cliente;
     }
 
-    public void setIdCliente(int idCliente) {
-        this.idCliente = idCliente;
+    public void setId_cliente(int id_cliente) {
+        this.id_cliente = id_cliente;
     }
 
-    public int getIdProducto() {
-        return idProducto;
+    public int getId_producto() {
+        return id_producto;
     }
 
-    public void setIdProducto(int idProducto) {
-        this.idProducto = idProducto;
+    public void setId_producto(int id_producto) {
+        this.id_producto = id_producto;
     }
 }

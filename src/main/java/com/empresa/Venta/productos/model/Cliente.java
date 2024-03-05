@@ -84,4 +84,14 @@ public class Cliente {
     public void setMail(String mail) {
         this.mail = mail;
     }
+
+    public Cliente(int id, String nombre, String apellido, int dni, int edad, int telefono, String mail) {
+        this.id = id;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.dni = dni;
+        this.edad = edad;
+        this.telefono = telefono;
+        this.mail = mail;
+    }
 }

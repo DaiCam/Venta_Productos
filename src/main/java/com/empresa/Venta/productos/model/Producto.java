@@ -61,4 +61,12 @@ public class Producto {
     public void setCantidad(int cantidad) {
         this.cantidad = cantidad;
     }
+
+    public Producto(int id, String nombre, int precio, String codigo, int cantidad) {
+        this.id = id;
+        this.nombre = nombre;
+        this.precio = precio;
+        this.codigo = codigo;
+        this.cantidad = cantidad;
+    }
 }
