@@ -1,7 +1,11 @@
 package com.empresa.Venta.productos.model;
 
-import jakarta.persistence.*;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+//import jakarta.persistence.*;
 
+import javax.persistence.*;
+
+@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
 @Entity
 @Table(name="clientes")
 public class Cliente {
@@ -9,7 +13,7 @@ public class Cliente {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "Id")
-    private int id;
+    private Integer id;
 
     @Column(name="Nombre")
     private String nombre;
@@ -29,11 +33,11 @@ public class Cliente {
     @Column(name="Mail")
     private String mail;
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -85,7 +89,8 @@ public class Cliente {
         this.mail = mail;
     }
 
-    public Cliente(int id, String nombre, String apellido, int dni, int edad, int telefono, String mail) {
+    public Cliente(){}
+    public Cliente(Integer id, String nombre, String apellido, int dni, int edad, int telefono, String mail) {
         this.id = id;
         this.nombre = nombre;
         this.apellido = apellido;

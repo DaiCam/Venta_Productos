@@ -1,14 +1,19 @@
 package com.empresa.Venta.productos.model;
 
-import jakarta.persistence.*;
+//import jakarta.persistence.*;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+import javax.persistence.*;
+
+@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
 @Entity
 @Table(name="productos")
 public class Producto {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "Id")
-    private int id;
+    private Integer id;
 
     @Column(name="Nombre")
     private String nombre;
@@ -22,12 +27,12 @@ public class Producto {
     @Column(name="Cantidad")
     private int cantidad;
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
-        id = id;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getNombre() {
@@ -62,7 +67,8 @@ public class Producto {
         this.cantidad = cantidad;
     }
 
-    public Producto(int id, String nombre, int precio, String codigo, int cantidad) {
+    public Producto(){}
+    public Producto(Integer id, String nombre, int precio, String codigo, int cantidad) {
         this.id = id;
         this.nombre = nombre;
         this.precio = precio;

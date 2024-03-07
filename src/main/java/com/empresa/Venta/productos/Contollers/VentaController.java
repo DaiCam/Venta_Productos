@@ -11,6 +11,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @CrossOrigin(value = "*", allowedHeaders = "*", maxAge = 3600)
 @RestController
 public class VentaController {
@@ -27,6 +29,11 @@ public class VentaController {
     @PostMapping("/agregarVenta")
     public Venta agregarVenta(@RequestBody Venta venta){
         return ventaRepository.save(venta);
+    }
+
+    @GetMapping("/getVentas")
+    public List<Venta> getVentas(){
+        return ventaRepository.findAll();
     }
 
     /*@PostMapping("/agregarVenta")

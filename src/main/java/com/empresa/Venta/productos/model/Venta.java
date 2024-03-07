@@ -2,9 +2,10 @@ package com.empresa.Venta.productos.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import jakarta.persistence.*;
+//import jakarta.persistence.*;
 
 
+import javax.persistence.*;
 import java.util.Date;
 
 @Entity
@@ -13,7 +14,7 @@ public class Venta {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "Id")
-    private int id;
+    private Integer id;
 
     @Column(name = "Fecha")
     private Date fecha;
@@ -43,13 +44,11 @@ public class Venta {
     private Producto producto;
 
 
-
-
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -85,7 +84,8 @@ public class Venta {
         this.producto = producto;
     }
 
-    public Venta(int id, Date fecha, int cantidad, Cliente cliente, Producto producto) {
+    public Venta(){}
+    public Venta(Integer id, Date fecha, int cantidad, Cliente cliente, Producto producto) {
         this.id = id;
         this.fecha = fecha;
         this.cantidad = cantidad;
